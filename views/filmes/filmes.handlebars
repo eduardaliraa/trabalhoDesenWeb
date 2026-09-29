@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<h1>Lista de Filmes</h1>
+
+<a href="/filmes/cadastrar">
+  Cadastrar Filme
+</a>
+
+<hr>
+
+<ul>
+
+  {{#each filmes}}
+
+    <li>
+
+      <strong>{{nome}}</strong> - {{ano}}
+
+      <br>
+      <br>
+
+      <a href="/filmes/{{id}}">
+        Ver detalhes
+      </a>
+
+      <br>
+      <br>
+
+      <div>
+
+        <a href="/filmes/{{id}}/editar">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Editar
+        </a>
+
+        <form
+          action="/filmes/{{id}}?_method=DELETE"
+          method="POST"
+          style="display: inline; margin-left: 10px;"
+        >
+          <button type="submit">
+            <i class="fa-solid fa-trash-can"></i>
+            Excluir
+          </button>
+        </form>
+
+      </div>
+
+    </li>
+
+    <hr>
+
+  {{/each}}
+
+</ul>
+
+<a href="/">
+  Voltar para página inicial
+</a>

@@ -1,0 +1,67 @@
+<h1>Editar Artista</h1>
+
+<form action="/artistas/{{artista.id}}" method="POST">
+
+  <input type="hidden" name="_method" value="PUT">
+
+  <div>
+    <label>Nome do Artista:</label>
+    <input
+      type="text"
+      name="nome"
+      value="{{artista.nome}}"
+      required
+    >
+  </div>
+
+  <br>
+
+  <div>
+    <label>Ano de nascimento:</label>
+    <input
+      type="number"
+      name="anoNascimento"
+      value="{{artista.anoNascimento}}"
+    >
+  </div>
+
+  <br>
+
+  <div>
+    <label>Está em atividade?</label>
+
+    <input
+      type="checkbox"
+      name="emAtividade"
+      value="true"
+      {{#if artista.emAtividade}}checked{{/if}}
+    >
+
+    <span>Sim</span>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Nome artístico:</label>
+
+    <input
+      type="text"
+      name="nomeArtistico"
+      value="{{artista.nomeArtistico}}"
+    >
+  </div>
+
+  <br>
+
+  <button type="submit">
+    Salvar alterações
+  </button>
+
+</form>
+
+<br>
+
+<a href="/artistas">
+  Voltar para lista
+</a>

@@ -1,0 +1,98 @@
+<h1>Cadastrar Ficha Técnica</h1>
+
+{{#if filme}}
+
+  <h2>Filme: {{filme.nome}}</h2>
+
+  <form action="/filmes/{{filme.id}}/ficha-tecnica" method="POST">
+
+    <input type="hidden" name="filmeId" value="{{filme.id}}">
+
+    <div>
+      <label>Duração (minutos):</label>
+      <input type="number" name="duracaoMinutos">
+    </div>
+
+    <br>
+
+    <div>
+      <label>Orçamento:</label>
+      <input type="number" step="0.01" name="orcamento">
+    </div>
+
+    <br>
+
+    <div>
+      <label>Bilheteria:</label>
+      <input type="number" step="0.01" name="bilheteria">
+    </div>
+
+    <br>
+
+    <button type="submit">
+      Salvar
+    </button>
+
+  </form>
+
+{{else}}
+
+  <form action="/fichatecnica" method="POST">
+
+    <div>
+      <label>Filme:</label>
+
+      <select name="filmeId" required>
+
+        <option value="">
+          Selecione um filme
+        </option>
+
+        {{#each filmes}}
+
+          <option value="{{id}}">
+            {{nome}} ({{ano}})
+          </option>
+
+        {{/each}}
+
+      </select>
+
+    </div>
+
+    <br>
+
+    <div>
+      <label>Duração (minutos):</label>
+      <input type="number" name="duracaoMinutos">
+    </div>
+
+    <br>
+
+    <div>
+      <label>Orçamento:</label>
+      <input type="number" step="0.01" name="orcamento">
+    </div>
+
+    <br>
+
+    <div>
+      <label>Bilheteria:</label>
+      <input type="number" step="0.01" name="bilheteria">
+    </div>
+
+    <br>
+
+    <button type="submit">
+      Salvar
+    </button>
+
+  </form>
+
+{{/if}}
+
+<br>
+
+<a href="/fichatecnica">
+  Voltar para lista
+</a>

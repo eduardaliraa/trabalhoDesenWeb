@@ -1,0 +1,58 @@
+<h1>Lista de Fichas Técnicas</h1>
+
+<a href="/fichatecnica/cadastrar">
+  Cadastrar Ficha Técnica
+</a>
+
+<hr>
+
+<ul>
+
+  {{#each fichas}}
+
+    <li>
+
+      <strong>
+        {{#if filme}}
+          {{filme.nome}}
+        {{else}}
+          Filme não informado
+        {{/if}}
+      </strong>
+
+      <br>
+
+      Duração: {{duracaoMinutos}} minutos
+
+      <br>
+
+      Orçamento: {{orcamento}}
+
+      <br>
+
+      Bilheteria: {{bilheteria}}
+
+      <br>
+      <br>
+
+      <a href="/fichatecnica/{{id}}">
+        Ver detalhes
+      </a>
+
+    </li>
+
+    <hr>
+
+  {{else}}
+
+    <p>
+      Nenhuma ficha técnica cadastrada.
+    </p>
+
+  {{/each}}
+
+</ul>
+
+<a href="/">
+  Voltar para página inicial
+</a>

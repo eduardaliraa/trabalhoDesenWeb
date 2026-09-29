@@ -1,0 +1,56 @@
+<h1>Detalhes do Diretor</h1>
+
+<h2>{{diretor.nome}}</h2>
+
+<p>
+  <strong>Ano de nascimento:</strong>
+  {{diretor.anoNascimento}}
+</p>
+
+<p>
+  <strong>Nacionalidade:</strong>
+  {{diretor.nacionalidade}}
+</p>
+
+<hr>
+
+<h3>Filmes dirigidos</h3>
+
+{{#if diretor.filmes.length}}
+
+  <ul>
+
+    {{#each diretor.filmes}}
+
+      <li>
+        <a href="/filmes/{{id}}">
+          {{nome}}
+        </a>
+
+        - {{ano}}
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+{{else}}
+
+  <p>
+    Este diretor ainda não possui filmes cadastrados.
+  </p>
+
+{{/if}}
+
+<hr>
+
+<a href="/diretores/{{diretor.id}}/editar">
+  Editar diretor
+</a>
+
+<br>
+<br>
+
+<a href="/diretores">
+  Voltar para lista de diretores
+</a>

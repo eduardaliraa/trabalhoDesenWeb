@@ -1,0 +1,36 @@
+<h1>Detalhes do Artista</h1>
+
+<h2>{{artista.nome}}</h2>
+
+<p>
+  <strong>Nome artístico:</strong>
+  {{artista.nomeArtistico}}
+</p>
+
+<p>
+  <strong>Ano de nascimento:</strong>
+  {{artista.anoNascimento}}
+</p>
+
+<p>
+  <strong>Está em atividade:</strong>
+
+  {{#if artista.emAtividade}}
+    Sim
+  {{else}}
+    Não
+  {{/if}}
+</p>
+
+<br>
+
+<a href="/artistas/{{artista.id}}/editar">
+  Editar artista
+</a>
+
+<br>
+<br>
+
+<a href="/artistas">
+  Voltar para lista
+</a>

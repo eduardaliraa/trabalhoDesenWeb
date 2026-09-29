@@ -1,0 +1,35 @@
+<h1>Detalhes da Ficha Técnica</h1>
+
+{{#if ficha.filme}}
+
+  <h2>{{ficha.filme.nome}}</h2>
+
+  <p>
+    <strong>Ano do filme:</strong>
+    {{ficha.filme.ano}}
+  </p>
+
+{{/if}}
+
+<hr>
+
+<p>
+  <strong>Duração:</strong>
+  {{ficha.duracaoMinutos}} minutos
+</p>
+
+<p>
+  <strong>Orçamento:</strong>
+  {{ficha.orcamento}}
+</p>
+
+<p>
+  <strong>Bilheteria:</strong>
+  {{ficha.bilheteria}}
+</p>
+
+<br>
+
+<a href="/fichatecnica">
+  Voltar para lista
+</a>

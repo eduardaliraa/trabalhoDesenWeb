@@ -1,0 +1,76 @@
+<h1>Detalhes do Filme</h1>
+
+<h2>{{filme.nome}}</h2>
+
+<p>
+  <strong>Ano:</strong>
+  {{filme.ano}}
+</p>
+
+<hr>
+
+<h3>Diretor</h3>
+
+{{#if filme.diretor}}
+
+  <p>
+    <strong>Nome:</strong>
+    {{filme.diretor.nome}}
+  </p>
+
+  <p>
+    <strong>Ano de nascimento:</strong>
+    {{filme.diretor.anoNascimento}}
+  </p>
+
+  <p>
+    <strong>Nacionalidade:</strong>
+    {{filme.diretor.nacionalidade}}
+  </p>
+
+{{else}}
+
+  <p>Este filme ainda não possui diretor cadastrado.</p>
+
+{{/if}}
+
+<hr>
+
+<h3>Artistas</h3>
+
+{{#if filme.artistas}}
+
+  <ul>
+
+    {{#each filme.artistas}}
+
+      <li>
+        {{nome}}
+
+        {{#if nomeArtistico}}
+          - {{nomeArtistico}}
+        {{/if}}
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+{{else}}
+
+  <p>Este filme ainda não possui artistas cadastrados.</p>
+
+{{/if}}
+
+<hr>
+
+<a href="/filmes/{{filme.id}}/editar">
+  Editar filme
+</a>
+
+<br>
+<br>
+
+<a href="/filmes">
+  Voltar para lista de filmes
+</a>
