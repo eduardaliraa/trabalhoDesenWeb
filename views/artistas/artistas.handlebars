@@ -2,24 +2,25 @@
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/style.css">
 
-<h1>Lista de Artistas</h1 class="text-center">
+<div class="container mt-4">
 
-<a href="/artistas/cadastrar" class="btn btn-cadastrar">
-  Cadastrar Artista
-</a>
+  <h1 class="text-center mb-4">Lista de Artistas</h1>
 
-<hr>
+  <div class="text-center mb-4">
 
-<ul>
+    <a href="/artistas/cadastrar" class="btn btn-cadastrar">
+      Cadastrar Artista
+    </a>
+
+  </div>
+
+  <hr>
 
   {{#each artistas}}
 
-    <li>
+    <div class="text-center mb-4">
 
-      <strong>{{nome}}</strong>
-
-      <br>
-      <br>
+      <h3>{{nome}}</h3>
 
       <a href="/artistas/{{id}}" class="btn btn-ver">
         Ver detalhes
@@ -28,34 +29,43 @@
       <br>
       <br>
 
-      <div>
+      <a
+        href="/artistas/{{id}}/editar"
+        class="btn btn-cadastrar"
+      >
+        <i class="fa-solid fa-pen-to-square"></i>
+        Editar
+      </a>
 
-        <a href="/artistas/{{id}}/editar" class ="btn btn-cadastrar">
-          <i class="fa-solid fa-pen-to-square"></i>
-          Editar
-        </a>
+      <form
+        action="/artistas/{{id}}?_method=DELETE"
+        class="btn btn-cadastrar"
+        method="POST"
+        style="display: inline;"
+      >
 
-        <form
-          action="/artistas/{{id}}?_method=DELETE"
-          method="POST"
-          style="display: inline; margin-left: 10px;"
+        <button
+          type="submit"
+          class="btn btn-excluir"
         >
-          <button type="submit" class="btn btn-cadastrar">
-            <i class="fa-solid fa-trash-can"></i>
-            Excluir
-          </button>
-        </form>
+          <i class="fa-solid fa-trash-can"></i>
+          Excluir
+        </button>
 
-      </div>
+      </form>
 
-    </li>
+    </div>
 
     <hr>
 
   {{/each}}
 
-</ul>
+  <div class="text-center mt-4">
 
-<a href="/" class="btn btn-ver">
-  Voltar para página inicial
-</a>
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>

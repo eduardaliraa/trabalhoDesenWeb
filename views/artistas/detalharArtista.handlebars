@@ -1,38 +1,55 @@
-<h1>Detalhes do Artista</h1 class="text-center">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<h2>{{artista.nome}}</h2>
+<div class="container mt-4">
 
-<br>
+  <h1 class="text-center mb-4">Detalhes do Artista</h1>
 
-<p>
-  <strong>Nome artístico:</strong>
-  {{artista.nomeArtistico}}
-</p>
+  <div class="text-center">
 
-<p>
-  <strong>Ano de nascimento:</strong>
-  {{artista.anoNascimento}}
-</p>
+    <h2>{{artista.nome}}</h2>
 
-<p>
-  <strong>Está em atividade:</strong>
+    <p>
+      <strong>Nome artístico:</strong>
+      {{artista.nomeArtistico}}
+    </p>
 
-  {{#if artista.emAtividade}}
-    Sim
-  {{else}}
-    Não
-  {{/if}}
-</p>
+    <p>
+      <strong>Ano de nascimento:</strong>
+      {{artista.anoNascimento}}
+    </p>
 
-<br>
+    <p>
+      <strong>Está em atividade:</strong>
 
-<a href="/artistas/{{artista.id}}/editar" class="btn btn-cadastrar">
-  Editar artista
-</a>
+      {{#if artista.emAtividade}}
+        Sim
+      {{else}}
+        Não
+      {{/if}}
 
-<br>
-<br>
+    </p>
 
-<a href="/artistas" class="btn btn-ver">
-  Voltar para lista
-</a>
+  </div>
+
+  <hr>
+
+  <div class="text-center mt-4">
+
+    <a
+      href="/artistas/{{artista.id}}/editar"
+      class="btn btn-cadastrar"
+    >
+      Editar artista
+    </a>
+
+    <a
+      href="/artistas"
+      class="btn btn-ver"
+    >
+      Voltar para lista
+    </a>
+
+  </div>
+
+</div>

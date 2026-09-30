@@ -1,14 +1,19 @@
 const express = require('express');
+const app = express();
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/bd');
 const methodOverride = require('method-override');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 const Filme = require('./models/filme.model');
 const Diretor = require('./models/Diretor');
 const Artista = require('./models/Artista');
 const FichaTecnica = require('./models/FichaTecnica');
 
-const app = express();
 
 // CSS
 app.use(express.static('css'));
@@ -548,6 +553,47 @@ app.get('/fichatecnica/:id', async (req, res) => {
   res.render('fichatecnica/detalharFichaTecnica', {
     ficha: ficha.toJSON()
   });
+
+});
+
+// EDITAR FICHA TÉCNICA
+app.get('/fichatecnica/:id/editar', async (req, res) => {
+
+  const ficha = await FichaTecnica.findByPk(req.params.id, {
+    include: [
+      {
+        model: Filme,
+        as: 'filme'
+      }
+    ]
+  });
+
+  if (!ficha) {
+    return res.send('Ficha Técnica não encontrada.');
+  }
+
+  res.render('fichatecnica/editarFichaTecnica', {
+    ficha: ficha.toJSON()
+  });
+
+});
+
+// ATUALIZAR FICHA TÉCNICA
+app.put('/fichatecnica/:id', async (req, res) => {
+
+  const ficha = await FichaTecnica.findByPk(req.params.id);
+
+  if (!ficha) {
+    return res.send('Ficha Técnica não encontrada.');
+  }
+
+  ficha.duracaoMinutos = req.body.duracaoMinutos;
+  ficha.orcamento = req.body.orcamento;
+  ficha.bilheteria = req.body.bilheteria;
+
+  await ficha.save();
+
+  res.redirect('/fichatecnica');
 
 });
 

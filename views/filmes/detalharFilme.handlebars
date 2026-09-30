@@ -1,74 +1,111 @@
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/style.css">
 
-<h1 class="text-center mb-4">Detalhes do Filme</h1>
+<div class="container mt-4">
 
-<h2 class="text-center">{{filme.nome}}</h2>
+  <h1 class="text-center mb-4">Detalhes do Filme</h1>
 
-<p class="text-center">
-  <strong>Ano:</strong> {{filme.ano}}
-</p>
+  <div class="text-center">
 
-<hr>
+    <h2>{{filme.nome}}</h2>
 
-<h3>Diretor</h3>
+    <p>
+      <strong>Ano:</strong> {{filme.ano}}
+    </p>
 
-{{#if filme.diretor}}
+  </div>
 
-  <p>
-    <strong>Nome:</strong>
-    {{filme.diretor.nome}}
-  </p>
+  <hr>
 
-  <p>
-    <strong>Ano de nascimento:</strong>
-    {{filme.diretor.anoNascimento}}
-  </p>
+  <h3 class="text-center mb-4">Diretor</h3>
 
-  <p>
-    <strong>Nacionalidade:</strong>
-    {{filme.diretor.nacionalidade}}
-  </p>
+  {{#if filme.diretor}}
 
-{{else}}
+    <div class="text-center">
 
-  <p>Este filme ainda não possui diretor cadastrado.</p>
+      <p>
+        <strong>Nome:</strong>
+        {{filme.diretor.nome}}
+      </p>
 
-{{/if}}
+      <p>
+        <strong>Ano de nascimento:</strong>
+        {{filme.diretor.anoNascimento}}
+      </p>
 
-<hr>
+      <p>
+        <strong>Nacionalidade:</strong>
+        {{filme.diretor.nacionalidade}}
+      </p>
 
-<h3>Artistas</h3>
+    </div>
 
-{{#if filme.artistas}}
+  {{else}}
 
-  <ul>
-    {{#each filme.artistas}}
-      <li>
-        {{nome}}
+    <p class="text-center">
+      Este filme ainda não possui diretor cadastrado.
+    </p>
 
-```
-    {{#if nomeArtistico}}
-      - {{nomeArtistico}}
-    {{/if}}
-  </li>
-{{/each}}
-```
+  {{/if}}
 
-  </ul>
+  <hr>
 
-{{else}}
+  <h3 class="text-center mb-4">Artistas</h3>
 
-  <p>Este filme ainda não possui artistas cadastrados.</p>
+  {{#if filme.artistas}}
 
-{{/if}}
+    <div class="text-center">
 
-<hr>
+      {{#each filme.artistas}}
 
-<a href="/filmes/{{filme.id}}/editar" class="btn btn-cadastrar">
-  Editar filme
-</a>
+        <div class="mb-3">
 
-<a href="/filmes" class="btn btn-ver">
-  Voltar para lista de filmes
-</a>
+          <p>
+            <strong>Nome:</strong>
+            {{nome}}
+          </p>
+
+          {{#if nomeArtistico}}
+
+            <p>
+              <strong>Nome artístico:</strong>
+              {{nomeArtistico}}
+            </p>
+
+          {{/if}}
+
+        </div>
+
+      {{/each}}
+
+    </div>
+
+  {{else}}
+
+    <p class="text-center">
+      Este filme ainda não possui artistas cadastrados.
+    </p>
+
+  {{/if}}
+
+  <hr>
+
+  <div class="text-center mt-4">
+
+    <a
+      href="/filmes/{{filme.id}}/editar"
+      class="btn btn-cadastrar"
+    >
+      Editar filme
+    </a>
+
+    <a
+      href="/filmes"
+      class="btn btn-ver"
+    >
+      Voltar para lista de filmes
+    </a>
+
+  </div>
+
+</div>

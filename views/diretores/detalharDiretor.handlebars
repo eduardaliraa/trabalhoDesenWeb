@@ -1,56 +1,74 @@
-<h1>Detalhes do Diretor</h1>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<h2>{{diretor.nome}}</h2>
+<div class="container mt-4">
 
-<p>
-  <strong>Ano de nascimento:</strong>
-  {{diretor.anoNascimento}}
-</p>
+  <h1 class="text-center mb-4">Detalhes do Diretor</h1>
 
-<p>
-  <strong>Nacionalidade:</strong>
-  {{diretor.nacionalidade}}
-</p>
+  <div class="text-center">
 
-<hr>
+    <h2>{{diretor.nome}}</h2>
 
-<h3>Filmes dirigidos</h3>
+    <p>
+      <strong>Ano de nascimento:</strong>
+      {{diretor.anoNascimento}}
+    </p>
 
-{{#if diretor.filmes.length}}
+    <p>
+      <strong>Nacionalidade:</strong>
+      {{diretor.nacionalidade}}
+    </p>
 
-  <ul>
+  </div>
 
-    {{#each diretor.filmes}}
+  <hr>
 
-      <li>
-        <a href="/filmes/{{id}}">
-          {{nome}}
-        </a>
+  <h3 class="text-center mb-4">Filmes dirigidos</h3>
 
-        - {{ano}}
-      </li>
+  {{#if diretor.filmes.length}}
 
-    {{/each}}
+    <div class="text-center">
 
-  </ul>
+      {{#each diretor.filmes}}
 
-{{else}}
+        <div class="mb-3">
 
-  <p>
-    Este diretor ainda não possui filmes cadastrados.
-  </p>
+          <h5>{{nome}}</h5>
 
-{{/if}}
+          <p>
+            Ano: {{ano}}
+          </p>
 
-<hr>
+          <a href="/filmes/{{id}}" class="btn btn-ver">
+            Ver detalhes do filme
+          </a>
 
-<a href="/diretores/{{diretor.id}}/editar">
-  Editar diretor
-</a>
+        </div>
 
-<br>
-<br>
+        <hr>
 
-<a href="/diretores">
-  Voltar para lista de diretores
-</a>
+      {{/each}}
+
+    </div>
+
+  {{else}}
+
+    <p class="text-center">
+      Este diretor ainda não possui filmes cadastrados.
+    </p>
+
+  {{/if}}
+
+  <div class="text-center mt-4">
+
+    <a href="/diretores/{{diretor.id}}/editar" class="btn btn-cadastrar">
+      Editar diretor
+    </a>
+
+    <a href="/diretores" class="btn btn-ver">
+      Voltar para lista de diretores
+    </a>
+
+  </div>
+
+</div>

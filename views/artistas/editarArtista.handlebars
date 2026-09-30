@@ -1,67 +1,103 @@
-<h1>Editar Artista</h1 class="text-center">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<form action="/artistas/{{artista.id}}" method="POST">
+<div class="container mt-4">
 
-  <input type="hidden" name="_method" value="PUT">
+  <h1 class="text-center mb-4">Editar Artista</h1>
 
-  <div>
-    <label><strong>Nome do Artista:</strong></label>
-    <input
-      type="text"
-      name="nome"
-      value="{{artista.nome}}"
-      required
-    >
-  </div>
+  <form
+    action="/artistas/{{artista.id}}?_method=PUT"
+    method="POST"
+  >
 
-  <br>
+    <div class="mb-3">
 
-  <div>
-    <label><strong>Ano de nascimento:</strong></label>
-    <input
-      type="number"
-      name="anoNascimento"
-      value="{{artista.anoNascimento}}"
-    >
-  </div>
+      <label class="form-label">
+        <strong>Nome do Artista:</strong>
+      </label>
 
-  <br>
+      <input
+        type="text"
+        name="nome"
+        value="{{artista.nome}}"
+        class="form-control"
+        required
+      >
 
-  <div>
-    <label><strong>Está em atividade?</strong></label>
+    </div>
 
-    <input
-      type="checkbox"
-      name="emAtividade"
-      value="true"
-      {{#if artista.emAtividade}}checked{{/if}}
-    >
+    <div class="mb-3">
 
-    <span>Sim</span>
-  </div>
+      <label class="form-label">
+        <strong>Ano de nascimento:</strong>
+      </label>
 
-  <br>
+      <input
+        type="number"
+        name="anoNascimento"
+        value="{{artista.anoNascimento}}"
+        class="form-control"
+      >
 
-  <div>
-    <label><strong>Nome artístico:</strong></label>
+    </div>
 
-    <input
-      type="text"
-      name="nomeArtistico"
-      value="{{artista.nomeArtistico}}"
-    >
-  </div>
+    <div class="mb-3">
 
-  <br>
+      <label class="form-label">
+        <strong>Está em atividade?</strong>
+      </label>
 
-  <button type="submit" class="btn btn-cadastrar">
-    Salvar alterações
-  </button>
+      <div class="form-check">
 
-</form>
+        <input
+          type="checkbox"
+          name="emAtividade"
+          value="true"
+          class="form-check-input"
+          {{#if artista.emAtividade}}checked{{/if}}
+        >
 
-<br>
+        <label class="form-check-label">
+          Sim
+        </label>
 
-<a href="/artistas" class="btn btn-ver">
-  Voltar para lista
-</a>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Nome artístico:</strong>
+      </label>
+
+      <input
+        type="text"
+        name="nomeArtistico"
+        value="{{artista.nomeArtistico}}"
+        class="form-control"
+      >
+
+    </div>
+
+    <div class="text-center mt-4">
+
+      <button
+        type="submit"
+        class="btn btn-cadastrar"
+      >
+        Salvar alterações
+      </button>
+
+      <a
+        href="/artistas"
+        class="btn btn-ver"
+      >
+        Voltar para lista
+      </a>
+
+    </div>
+
+  </form>
+
+</div>

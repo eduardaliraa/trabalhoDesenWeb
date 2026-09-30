@@ -1,59 +1,79 @@
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/style.css">
 
-<h1 class="text-center">{{titulo}}</h1>
+<div class="container mt-4">
 
-<p class="text-center">
-  Bem-vindo ao sistema de filmes.
-</p>
+  <h1 class="text-center mb-3">{{titulo}}</h1>
 
-<hr>
+  <p class="text-center">
+   <i> Bem-vindo ao sistema de filmes.</i> </p>
+   <br>
+   <p>Aqui você pode gerenciar informações sobre filmes, diretores, artistas e fichas técnicas.
+     Use os botões abaixo para navegar pelas diferentes seções do sistema.</p>
+  </p>
 
-<h2>Filmes</h2>
+  <hr>
 
-<a href="/filmes" class="btn btn-ver">
-  Ver filmes
-</a>
+  <div class="text-center">
 
-<a href="/filmes/cadastrar" class="btn btn-cadastrar">
-  Cadastrar filme
-</a>
+    <h2 class="mb-3">Filmes</h2>
 
-<br>
-<br>
+    <a href="/filmes" class="btn btn-ver">
+      Ver filmes
+    </a>
 
-<h2>Artistas</h2>
+    <a href="/filmes/cadastrar" class="btn btn-cadastrar">
+      Cadastrar filme
+    </a>
 
-<a href="/artistas" class="btn btn-ver">
-  Ver artistas
-</a>
+  </div>
 
-<a href="/artistas/cadastrar" class="btn btn-cadastrar">
-  Cadastrar artista
-</a>
+  <hr>
 
-<br>
-<br>
+  <div class="text-center">
 
-<h2>Diretores</h2>
+    <h2 class="mb-3">Artistas</h2>
 
-<a href="/diretores" class="btn btn-ver">
-  Ver diretores
-</a>
+    <a href="/artistas" class="btn btn-ver">
+      Ver artistas
+    </a>
 
-<a href="/diretores/cadastrar" class="btn btn-cadastrar">
-  Cadastrar diretor
-</a>
+    <a href="/artistas/cadastrar" class="btn btn-cadastrar">
+      Cadastrar artista
+    </a>
 
-<br>
-<br>
+  </div>
 
-<h2>Fichas Técnicas</h2>
+  <hr>
 
-<a href="/fichatecnica" class="btn btn-ver">
-  Ver fichas técnicas
-</a>
+  <div class="text-center">
 
-<a href="/fichatecnica/cadastrar" class="btn btn-cadastrar">
-  Cadastrar ficha técnica
-</a>
+    <h2 class="mb-3">Diretores</h2>
+
+    <a href="/diretores" class="btn btn-ver">
+      Ver diretores
+    </a>
+
+    <a href="/diretores/cadastrar" class="btn btn-cadastrar">
+      Cadastrar diretor
+    </a>
+
+  </div>
+
+  <hr>
+
+  <div class="text-center">
+
+    <h2 class="mb-3">Fichas Técnicas</h2>
+
+    <a href="/fichatecnica" class="btn btn-ver">
+      Ver fichas técnicas
+    </a>
+
+    <a href="/fichatecnica/cadastrar" class="btn btn-cadastrar">
+      Cadastrar ficha técnica
+    </a>
+
+  </div>
+
+</div>

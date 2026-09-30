@@ -1,59 +1,59 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<h1>Lista de Diretores</h1>
+<div class="container mt-4">
 
-<a href="/diretores/cadastrar">
-  Cadastrar Diretor
-</a>
+  <h1 class="text-center mb-4">Lista de Diretores</h1>
 
-<hr>
+  <div class="text-center mb-4">
+    <a href="/diretores/cadastrar" class="btn btn-cadastrar">
+      Cadastrar Diretor
+    </a>
+  </div>
 
-<ul>
+  <hr>
 
   {{#each diretores}}
 
-    <li>
+    <div class="text-center mb-4">
 
-      <strong>{{nome}}</strong>
+      <h3>{{nome}}</h3>
 
-    
-      <br>
-
-      <a href="/diretores/{{id}}">
+      <a href="/diretores/{{id}}" class="btn btn-ver">
         Ver detalhes
       </a>
 
-      <br>
-      <br>
+      <br><br>
 
-      <div>
+      <a href="/diretores/{{id}}/editar" class="btn btn-cadastrar">
+        <i class="fa-solid fa-pen-to-square"></i>
+        Editar
+      </a>
 
-        <a href="/diretores/{{id}}/editar">
-          <i class="fa-solid fa-pen-to-square"></i>
-          Editar
-        </a>
+      <form
+        action="/diretores/{{id}}?_method=DELETE"
+        method="POST"
+        style="display: inline;"
+      >
+        <button type="submit" class="btn btn-cadastrar">
+          <i class="fa-solid fa-trash-can"></i>
+          Excluir
+        </button>
+      </form>
 
-        <form
-          action="/diretores/{{id}}?_method=DELETE"
-          method="POST"
-          style="display: inline; margin-left: 10px;"
-        >
-          <button type="submit">
-            <i class="fa-solid fa-trash-can"></i>
-            Excluir
-          </button>
-        </form>
-
-      </div>
-
-    </li>
+    </div>
 
     <hr>
 
   {{/each}}
 
-</ul>
+  <div class="text-center mt-4">
 
-<a href="/">
-  Voltar para página inicial
-</a>
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>

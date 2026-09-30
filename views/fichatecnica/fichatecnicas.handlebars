@@ -1,58 +1,82 @@
-<h1>Lista de Fichas Técnicas</h1>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<a href="/fichatecnica/cadastrar">
-  Cadastrar Ficha Técnica
-</a>
+<div class="container mt-4">
 
-<hr>
+  <h1 class="text-center mb-4">Lista de Fichas Técnicas</h1>
 
-<ul>
+  <div class="text-center mb-4">
+
+    <a
+      href="/fichatecnica/cadastrar"
+      class="btn btn-cadastrar"
+    >
+      Cadastrar Ficha Técnica
+    </a>
+
+  </div>
+
+  <hr>
 
   {{#each fichas}}
 
-    <li>
+    <div class="text-center mb-4">
 
-      <strong>
+      <h3>
         {{#if filme}}
           {{filme.nome}}
         {{else}}
           Filme não informado
         {{/if}}
-      </strong>
+      </h3>
 
-      <br>
+      <p>
+        <strong>Duração:</strong>
+        {{duracaoMinutos}} minutos
+      </p>
 
-      Duração: {{duracaoMinutos}} minutos
+      <p>
+        <strong>Orçamento:</strong>
+        {{orcamento}}
+      </p>
 
-      <br>
+      <p>
+        <strong>Bilheteria:</strong>
+        {{bilheteria}}
+      </p>
 
-      Orçamento: {{orcamento}}
-
-      <br>
-
-      Bilheteria: {{bilheteria}}
-
-      <br>
-      <br>
-
-      <a href="/fichatecnica/{{id}}">
+      <a
+        href="/fichatecnica/{{id}}"
+        class="btn btn-ver"
+      >
         Ver detalhes
       </a>
 
-    </li>
+      <a
+  href="/fichatecnica/{{id}}/editar"
+  class="btn btn-cadastrar"
+>
+  Editar
+</a>
+
+    </div>
 
     <hr>
 
   {{else}}
 
-    <p>
+    <p class="text-center">
       Nenhuma ficha técnica cadastrada.
     </p>
 
   {{/each}}
 
-</ul>
+  <div class="text-center mt-4">
 
-<a href="/">
-  Voltar para página inicial
-</a>
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>

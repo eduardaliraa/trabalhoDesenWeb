@@ -1,83 +1,121 @@
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/style.css">
 
-<h1 class="text-center">Cadastrar Filme</h1>
+<div class="container mt-4">
 
-<form action="/filmes" method="POST">
+  <h1 class="text-center mb-4">Cadastrar Filme</h1>
 
-<br>
+  <form action="/filmes" method="POST">
 
-  <div class="b">
-    <label><strong>Nome do Filme:</strong></label>
-    <input type="text" name="nome" required>
-  </div>
+    <div class="mb-3">
 
-  <br>
+      <label class="form-label">
+        <strong>Nome do Filme:</strong>
+      </label>
 
-  <div class="b">
-    <label><strong>Ano:</strong></label>
-    <input type="number" name="ano" required>
-  </div>
+      <input
+        type="text"
+        name="nome"
+        class="form-control"
+        required
+      >
 
-  <br>
+    </div>
 
-  <div class="b">
-    <label><strong>Diretor:</strong></label>
+    <div class="mb-3">
 
-    <select name="diretorId" required>
+      <label class="form-label">
+        <strong>Ano:</strong>
+      </label>
 
-      <option value="">
-        Selecione um diretor
-      </option>
+      <input
+        type="number"
+        name="ano"
+        class="form-control"
+        required
+      >
 
-      {{#each diretores}}
+    </div>
 
-        <option value="{{id}}">
-          {{nome}}
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Diretor:</strong>
+      </label>
+
+      <select
+        name="diretorId"
+        class="form-select"
+        required
+      >
+
+        <option value="">
+          Selecione um diretor
         </option>
+
+        {{#each diretores}}
+
+          <option value="{{id}}">
+            {{nome}}
+          </option>
+
+        {{/each}}
+
+      </select>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Artistas:</strong>
+      </label>
+
+      {{#each artistas}}
+
+        <div class="form-check">
+
+          <input
+            type="checkbox"
+            name="artistas"
+            value="{{id}}"
+            class="form-check-input"
+          >
+
+          <label class="form-check-label">
+
+            {{nome}}
+
+            {{#if nomeArtistico}}
+              - {{nomeArtistico}}
+            {{/if}}
+
+          </label>
+
+        </div>
 
       {{/each}}
 
-    </select>
+    </div>
 
-  </div>
+    <div class="text-center mt-4">
 
-  <br>
+      <button
+        type="submit"
+        class="btn btn-cadastrar"
+      >
+        Cadastrar
+      </button>
 
-  <div >
+      <a
+        href="/filmes"
+        class="btn btn-ver"
+      >
+        Voltar para lista
+      </a>
 
-    <label><strong>Artistas:</strong></label>
+    </div>
 
-    {{#each artistas}}
+  </form>
 
-      <div>
-        <input
-          type="checkbox"
-          name="artistas"
-          value="{{id}}"
-        >
-
-        <span>{{nome}}</span>
-
-        {{#if nomeArtistico}}
-          - {{nomeArtistico}}
-        {{/if}}
-      </div>
-
-    {{/each}}
-
-  </div>
-
-  <br>
-
-  <button type="submit" class="btn btn-cadastrar">
-    Cadastrar
-  </button>
-
-</form>
-
-<br>
-
-<a href="/filmes" class="btn btn-ver">
-  Voltar para lista
-</a>
+</div>

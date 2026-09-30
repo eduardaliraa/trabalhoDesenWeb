@@ -1,98 +1,186 @@
-<h1>Cadastrar Ficha Técnica</h1>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-{{#if filme}}
+<div class="container mt-4">
 
-  <h2>Filme: {{filme.nome}}</h2>
+  <h1 class="text-center mb-4">Cadastrar Ficha Técnica</h1>
 
-  <form action="/filmes/{{filme.id}}/ficha-tecnica" method="POST">
+  {{#if filme}}
 
-    <input type="hidden" name="filmeId" value="{{filme.id}}">
+    <div class="text-center mb-4">
 
-    <div>
-      <label>Duração (minutos):</label>
-      <input type="number" name="duracaoMinutos">
+      <h2>Filme: {{filme.nome}}</h2>
+
     </div>
 
-    <br>
+    <form action="/filmes/{{filme.id}}/ficha-tecnica" method="POST">
 
-    <div>
-      <label>Orçamento:</label>
-      <input type="number" step="0.01" name="orcamento">
-    </div>
+      <input
+        type="hidden"
+        name="filmeId"
+        value="{{filme.id}}"
+      >
 
-    <br>
+      <div class="mb-3">
 
-    <div>
-      <label>Bilheteria:</label>
-      <input type="number" step="0.01" name="bilheteria">
-    </div>
+        <label class="form-label">
+          <strong>Duração (minutos):</strong>
+        </label>
 
-    <br>
+        <input
+          type="number"
+          name="duracaoMinutos"
+          class="form-control"
+        >
 
-    <button type="submit">
-      Salvar
-    </button>
+      </div>
 
-  </form>
+      <div class="mb-3">
 
-{{else}}
+        <label class="form-label">
+          <strong>Orçamento:</strong>
+        </label>
 
-  <form action="/fichatecnica" method="POST">
+        <input
+          type="number"
+          step="0.01"
+          name="orcamento"
+          class="form-control"
+        >
 
-    <div>
-      <label>Filme:</label>
+      </div>
 
-      <select name="filmeId" required>
+      <div class="mb-3">
 
-        <option value="">
-          Selecione um filme
-        </option>
+        <label class="form-label">
+          <strong>Bilheteria:</strong>
+        </label>
 
-        {{#each filmes}}
+        <input
+          type="number"
+          step="0.01"
+          name="bilheteria"
+          class="form-control"
+        >
 
-          <option value="{{id}}">
-            {{nome}} ({{ano}})
+      </div>
+
+      <div class="text-center mt-4">
+
+        <button
+          type="submit"
+          class="btn btn-cadastrar"
+        >
+          Salvar
+        </button>
+
+        <a
+          href="/fichatecnica"
+          class="btn btn-ver"
+        >
+          Voltar para lista
+        </a>
+
+      </div>
+
+    </form>
+
+  {{else}}
+
+    <form action="/fichatecnica" method="POST">
+
+      <div class="mb-3">
+
+        <label class="form-label">
+          <strong>Filme:</strong>
+        </label>
+
+        <select
+          name="filmeId"
+          class="form-select"
+          required
+        >
+
+          <option value="">
+            Selecione um filme
           </option>
 
-        {{/each}}
+          {{#each filmes}}
 
-      </select>
+            <option value="{{id}}">
+              {{nome}} ({{ano}})
+            </option>
 
-    </div>
+          {{/each}}
 
-    <br>
+        </select>
 
-    <div>
-      <label>Duração (minutos):</label>
-      <input type="number" name="duracaoMinutos">
-    </div>
+      </div>
 
-    <br>
+      <div class="mb-3">
 
-    <div>
-      <label>Orçamento:</label>
-      <input type="number" step="0.01" name="orcamento">
-    </div>
+        <label class="form-label">
+          <strong>Duração (minutos):</strong>
+        </label>
 
-    <br>
+        <input
+          type="number"
+          name="duracaoMinutos"
+          class="form-control"
+        >
 
-    <div>
-      <label>Bilheteria:</label>
-      <input type="number" step="0.01" name="bilheteria">
-    </div>
+      </div>
 
-    <br>
+      <div class="mb-3">
 
-    <button type="submit">
-      Salvar
-    </button>
+        <label class="form-label">
+          <strong>Orçamento:</strong>
+        </label>
 
-  </form>
+        <input
+          type="number"
+          step="0.01"
+          name="orcamento"
+          class="form-control"
+        >
 
-{{/if}}
+      </div>
 
-<br>
+      <div class="mb-3">
 
-<a href="/fichatecnica">
-  Voltar para lista
-</a>
+        <label class="form-label">
+          <strong>Bilheteria:</strong>
+        </label>
+
+        <input
+          type="number"
+          step="0.01"
+          name="bilheteria"
+          class="form-control"
+        >
+
+      </div>
+
+      <div class="text-center mt-4">
+
+        <button
+          type="submit"
+          class="btn btn-cadastrar"
+        >
+          Salvar
+        </button>
+
+        <a
+          href="/fichatecnica"
+          class="btn btn-ver"
+        >
+          Voltar para lista
+        </a>
+
+      </div>
+
+    </form>
+
+  {{/if}}
+
+</div>
