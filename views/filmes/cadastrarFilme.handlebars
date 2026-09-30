@@ -1,23 +1,28 @@
-<h1>Cadastrar Filme</h1>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<h1 class="text-center">Cadastrar Filme</h1>
 
 <form action="/filmes" method="POST">
 
-  <div>
-    <label>Nome do Filme:</label>
+<br>
+
+  <div class="b">
+    <label><strong>Nome do Filme:</strong></label>
     <input type="text" name="nome" required>
   </div>
 
   <br>
 
-  <div>
-    <label>Ano:</label>
+  <div class="b">
+    <label><strong>Ano:</strong></label>
     <input type="number" name="ano" required>
   </div>
 
   <br>
 
-  <div>
-    <label>Diretor:</label>
+  <div class="b">
+    <label><strong>Diretor:</strong></label>
 
     <select name="diretorId" required>
 
@@ -39,9 +44,9 @@
 
   <br>
 
-  <div>
+  <div >
 
-    <label>Artistas:</label>
+    <label><strong>Artistas:</strong></label>
 
     {{#each artistas}}
 
@@ -65,7 +70,7 @@
 
   <br>
 
-  <button type="submit">
+  <button type="submit" class="btn btn-cadastrar">
     Cadastrar
   </button>
 
@@ -73,6 +78,6 @@
 
 <br>
 
-<a href="/filmes">
+<a href="/filmes" class="btn btn-ver">
   Voltar para lista
 </a>

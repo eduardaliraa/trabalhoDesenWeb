@@ -1,10 +1,12 @@
-<h1>Detalhes do Filme</h1>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<h2>{{filme.nome}}</h2>
+<h1 class="text-center mb-4">Detalhes do Filme</h1>
 
-<p>
-  <strong>Ano:</strong>
-  {{filme.ano}}
+<h2 class="text-center">{{filme.nome}}</h2>
+
+<p class="text-center">
+  <strong>Ano:</strong> {{filme.ano}}
 </p>
 
 <hr>
@@ -41,18 +43,17 @@
 {{#if filme.artistas}}
 
   <ul>
-
     {{#each filme.artistas}}
-
       <li>
         {{nome}}
 
-        {{#if nomeArtistico}}
-          - {{nomeArtistico}}
-        {{/if}}
-      </li>
-
-    {{/each}}
+```
+    {{#if nomeArtistico}}
+      - {{nomeArtistico}}
+    {{/if}}
+  </li>
+{{/each}}
+```
 
   </ul>
 
@@ -64,13 +65,10 @@
 
 <hr>
 
-<a href="/filmes/{{filme.id}}/editar">
+<a href="/filmes/{{filme.id}}/editar" class="btn btn-cadastrar">
   Editar filme
 </a>
 
-<br>
-<br>
-
-<a href="/filmes">
+<a href="/filmes" class="btn btn-ver">
   Voltar para lista de filmes
 </a>

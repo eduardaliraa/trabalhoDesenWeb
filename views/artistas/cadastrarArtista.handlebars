@@ -1,23 +1,23 @@
-<h1>Cadastrar Artista</h1>
+<h1>Cadastrar Artista</h1 class="text-center" >
 
 <form action="/artistas" method="POST">
 
   <div>
-    <label>Nome do Artista:</label>
+    <label><strong>Nome do Artista:</strong></label>
     <input type="text" name="nome" required>
   </div>
 
   <br>
 
   <div>
-    <label>Ano de nascimento:</label>
+    <label><strong>Ano de nascimento:</strong></label>
     <input type="number" name="anoNascimento">
   </div>
 
   <br>
 
   <div>
-    <label>Está em atividade?</label>
+    <label><strong>Está em atividade?</strong></label>
     <input type="checkbox" name="emAtividade" value="true">
     <span>Sim</span>
   </div>
@@ -25,18 +25,18 @@
   <br>
 
   <div>
-    <label>Nome artístico:</label>
+    <label><strong>Nome artístico:</strong></label>
     <input type="text" name="nomeArtistico">
   </div>
 
   <br>
 
-  <button type="submit">Cadastrar</button>
+  <button type="submit" class="btn btn-cadastrar">Cadastrar</button>
 
 </form>
 
 <br>
 
-<a href="/artistas">
+<a href="/artistas" class="btn btn-ver">
   Voltar para lista
 </a>

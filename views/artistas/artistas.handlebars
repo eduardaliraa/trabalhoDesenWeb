@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
 
-<h1>Lista de Artistas</h1>
+<h1>Lista de Artistas</h1 class="text-center">
 
-<a href="/artistas/cadastrar">
+<a href="/artistas/cadastrar" class="btn btn-cadastrar">
   Cadastrar Artista
 </a>
 
@@ -16,10 +18,10 @@
 
       <strong>{{nome}}</strong>
 
-    
+      <br>
       <br>
 
-      <a href="/artistas/{{id}}">
+      <a href="/artistas/{{id}}" class="btn btn-ver">
         Ver detalhes
       </a>
 
@@ -28,7 +30,7 @@
 
       <div>
 
-        <a href="/artistas/{{id}}/editar">
+        <a href="/artistas/{{id}}/editar" class ="btn btn-cadastrar">
           <i class="fa-solid fa-pen-to-square"></i>
           Editar
         </a>
@@ -38,7 +40,7 @@
           method="POST"
           style="display: inline; margin-left: 10px;"
         >
-          <button type="submit">
+          <button type="submit" class="btn btn-cadastrar">
             <i class="fa-solid fa-trash-can"></i>
             Excluir
           </button>
@@ -54,6 +56,6 @@
 
 </ul>
 
-<a href="/">
+<a href="/" class="btn btn-ver">
   Voltar para página inicial
 </a>

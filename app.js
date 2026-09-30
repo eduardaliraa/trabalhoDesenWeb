@@ -10,6 +10,13 @@ const FichaTecnica = require('./models/FichaTecnica');
 
 const app = express();
 
+// CSS
+app.use(express.static('css'));
+
+// Bootstrap
+app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
+
+
 // ==================================================
 // CONFIGURAÇÕES
 // ==================================================
