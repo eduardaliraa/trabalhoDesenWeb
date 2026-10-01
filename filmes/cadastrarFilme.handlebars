@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Cadastrar Filme</h1>
+
+  <form action="/filmes" method="POST">
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Nome do Filme:</strong>
+      </label>
+
+      <input
+        type="text"
+        name="nome"
+        class="form-control"
+        required
+      >
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Ano:</strong>
+      </label>
+
+      <input
+        type="number"
+        name="ano"
+        class="form-control"
+        required
+      >
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Diretor:</strong>
+      </label>
+
+      <select
+        name="diretorId"
+        class="form-select"
+        required
+      >
+
+        <option value="">
+          Selecione um diretor
+        </option>
+
+        {{#each diretores}}
+
+          <option value="{{id}}">
+            {{nome}}
+          </option>
+
+        {{/each}}
+
+      </select>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Artistas:</strong>
+      </label>
+
+      {{#each artistas}}
+
+        <div class="form-check">
+
+          <input
+            type="checkbox"
+            name="artistas"
+            value="{{id}}"
+            class="form-check-input"
+          >
+
+          <label class="form-check-label">
+
+            {{nome}}
+
+            {{#if nomeArtistico}}
+              - {{nomeArtistico}}
+            {{/if}}
+
+          </label>
+
+        </div>
+
+      {{/each}}
+
+    </div>
+
+    <div class="text-center mt-4">
+
+      <button
+        type="submit"
+        class="btn btn-cadastrar"
+      >
+        Cadastrar
+      </button>
+
+      <a
+        href="/filmes"
+        class="btn btn-ver"
+      >
+        Voltar para lista
+      </a>
+
+    </div>
+
+  </form>
+
+</div>

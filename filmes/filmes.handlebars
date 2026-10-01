@@ -1,0 +1,135 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+>
+
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/style.css">
+
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">
+    Lista de Filmes
+  </h1>
+
+
+  <div class="text-center mb-4">
+
+    <a
+      href="/filmes/cadastrar"
+      class="btn btn-cadastrar"
+    >
+      Cadastrar Filme
+    </a>
+
+  </div>
+
+
+  <!-- ALERT -->
+
+  <div
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+  >
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <strong>Filmes carregados!</strong>
+    Confira a lista de filmes cadastrados abaixo.
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Fechar"
+    ></button>
+
+  </div>
+
+
+  <!-- LISTA DE FILMES -->
+
+  <hr>
+
+  {{#each filmes}}
+
+    <div class="text-center mb-4">
+
+      <h3>
+        {{nome}}
+      </h3>
+
+      <p>
+        <strong>Ano:</strong>
+        {{ano}}
+      </p>
+
+
+      <a
+        href="/filmes/{{id}}"
+        class="btn btn-ver"
+      >
+        Ver detalhes
+      </a>
+
+
+      <br>
+      <br>
+
+
+      <a
+        href="/filmes/{{id}}/editar"
+        class="btn btn-cadastrar"
+      >
+
+        <i class="fa-solid fa-pen-to-square"></i>
+
+        Editar
+
+      </a>
+
+
+      <form
+        action="/filmes/{{id}}?_method=DELETE"
+        method="POST"
+        style="display: inline;"
+      >
+
+        <button
+          type="submit"
+          class="btn btn-cadastrar"
+        >
+
+          <i class="fa-solid fa-trash-can"></i>
+
+          Excluir
+
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <hr>
+
+  {{/each}}
+
+
+  <div class="text-center mt-4">
+
+    <a
+      href="/"
+      class="btn btn-ver"
+    >
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>

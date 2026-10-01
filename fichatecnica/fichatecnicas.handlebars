@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Lista de Fichas Técnicas</h1>
+
+  <div class="text-center mb-4">
+
+    <a
+      href="/fichatecnica/cadastrar"
+      class="btn btn-cadastrar"
+    >
+      Cadastrar Ficha Técnica
+    </a>
+
+  </div>
+
+  <div class="accordion" id="accordionFichas">
+
+    {{#each fichas}}
+
+      <div class="accordion-item mb-3">
+
+        <h2 class="accordion-header" id="heading{{id}}">
+
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse{{id}}"
+            aria-expanded="false"
+            aria-controls="collapse{{id}}"
+          >
+
+            {{#if filme}}
+              {{filme.nome}}
+            {{else}}
+              Filme não informado
+            {{/if}}
+
+          </button>
+
+        </h2>
+
+        <div
+          id="collapse{{id}}"
+          class="accordion-collapse collapse"
+          aria-labelledby="heading{{id}}"
+          data-bs-parent="#accordionFichas"
+        >
+
+          <div class="accordion-body text-center">
+
+            <p>
+              <strong>Duração:</strong>
+              {{duracaoMinutos}} minutos
+            </p>
+
+            <p>
+              <strong>Orçamento:</strong>
+              {{orcamento}}
+            </p>
+
+            <p>
+              <strong>Bilheteria:</strong>
+              {{bilheteria}}
+            </p>
+
+            <div class="mt-3">
+
+              <a
+                href="/fichatecnica/{{id}}"
+                class="btn btn-ver"
+              >
+                Ver detalhes
+              </a>
+
+              <a
+                href="/fichatecnica/{{id}}/editar"
+                class="btn btn-cadastrar"
+              >
+                Editar
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    {{else}}
+
+      <p class="text-center">
+        Nenhuma ficha técnica cadastrada.
+      </p>
+
+    {{/each}}
+
+  </div>
+
+  <div class="text-center mt-4">
+
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>

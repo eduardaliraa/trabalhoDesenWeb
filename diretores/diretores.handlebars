@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/style.css">
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+>
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Lista de Diretores</h1>
+
+  <div class="text-center mb-4">
+    <a href="/diretores/cadastrar" class="btn btn-cadastrar">
+      Cadastrar Diretor
+    </a>
+  </div>
+
+  <!-- Cards dos diretores -->
+  <div class="row g-4">
+
+    {{#each diretores}}
+
+      <div class="col-md-6 col-lg-4">
+
+        <div class="card h-100 shadow-sm">
+
+          <div class="card-body text-center">
+
+            <h3 class="card-title mb-4">
+              {{nome}}
+            </h3>
+
+            <a
+              href="/diretores/{{id}}"
+              class="btn btn-ver mb-3"
+            >
+              Ver detalhes
+            </a>
+
+            <div>
+
+              <a
+                href="/diretores/{{id}}/editar"
+                class="btn btn-cadastrar"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+                Editar
+              </a>
+
+              <form
+                action="/diretores/{{id}}?_method=DELETE"
+                method="POST"
+                style="display: inline;"
+              >
+
+                <button
+                  type="submit"
+                  class="btn btn-cadastrar"
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                  Excluir
+                </button>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    {{/each}}
+
+  </div>
+
+  <div class="text-center mt-4">
+
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>

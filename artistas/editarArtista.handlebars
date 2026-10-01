@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Editar Artista</h1>
+
+  <form
+    action="/artistas/{{artista.id}}?_method=PUT"
+    method="POST"
+  >
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Nome do Artista:</strong>
+      </label>
+
+      <input
+        type="text"
+        name="nome"
+        value="{{artista.nome}}"
+        class="form-control"
+        required
+      >
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Ano de nascimento:</strong>
+      </label>
+
+      <input
+        type="number"
+        name="anoNascimento"
+        value="{{artista.anoNascimento}}"
+        class="form-control"
+      >
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Está em atividade?</strong>
+      </label>
+
+      <div class="form-check">
+
+        <input
+          type="checkbox"
+          name="emAtividade"
+          value="true"
+          class="form-check-input"
+          {{#if artista.emAtividade}}checked{{/if}}
+        >
+
+        <label class="form-check-label">
+          Sim
+        </label>
+
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        <strong>Nome artístico:</strong>
+      </label>
+
+      <input
+        type="text"
+        name="nomeArtistico"
+        value="{{artista.nomeArtistico}}"
+        class="form-control"
+      >
+
+    </div>
+
+    <div class="text-center mt-4">
+
+      <button
+        type="submit"
+        class="btn btn-cadastrar"
+      >
+        Salvar alterações
+      </button>
+
+      <a
+        href="/artistas"
+        class="btn btn-ver"
+      >
+        Voltar para lista
+      </a>
+
+    </div>
+
+  </form>
+
+</div>

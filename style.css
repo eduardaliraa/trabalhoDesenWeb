@@ -1,0 +1,28 @@
+body {
+background-color: #f1bfe0;
+}
+
+.btn-ver {
+background-color: #f061c5;
+color: white;
+}
+
+.btn-cadastrar {
+background-color: #d873ec;
+color: white;
+}
+
+.b {
+display: flex;
+flex-direction: column;
+margin-bottom: 10px;
+}
+
+.ver-detalhes {
+background-color: #f061c5;
+color: white;
+padding: 5px 10px;
+text-decoration: none;
+border-radius: 5px;
+}
+

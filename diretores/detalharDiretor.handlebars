@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Detalhes do Diretor</h1>
+
+  <div class="text-center">
+
+    <h2>{{diretor.nome}}</h2>
+
+    <p>
+      <strong>Ano de nascimento:</strong>
+      {{diretor.anoNascimento}}
+    </p>
+
+    <p>
+      <strong>Nacionalidade:</strong>
+      {{diretor.nacionalidade}}
+    </p>
+
+  </div>
+
+  <hr>
+
+  <h3 class="text-center mb-4">Filmes dirigidos</h3>
+
+  {{#if diretor.filmes.length}}
+
+    <div class="text-center">
+
+      {{#each diretor.filmes}}
+
+        <div class="mb-3">
+
+          <h5>{{nome}}</h5>
+
+          <p>
+            Ano: {{ano}}
+          </p>
+
+          <a href="/filmes/{{id}}" class="btn btn-ver">
+            Ver detalhes do filme
+          </a>
+
+        </div>
+
+        <hr>
+
+      {{/each}}
+
+    </div>
+
+  {{else}}
+
+    <p class="text-center">
+      Este diretor ainda não possui filmes cadastrados.
+    </p>
+
+  {{/if}}
+
+  <div class="text-center mt-4">
+
+    <a href="/diretores/{{diretor.id}}/editar" class="btn btn-cadastrar">
+      Editar diretor
+    </a>
+
+    <a href="/diretores" class="btn btn-ver">
+      Voltar para lista de diretores
+    </a>
+
+  </div>
+
+</div>

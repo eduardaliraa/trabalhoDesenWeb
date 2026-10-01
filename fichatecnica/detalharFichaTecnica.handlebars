@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Detalhes da Ficha Técnica</h1>
+
+  {{#if ficha.filme}}
+
+    <div class="text-center">
+
+      <h2>{{ficha.filme.nome}}</h2>
+
+      <p>
+        <strong>Ano do filme:</strong>
+        {{ficha.filme.ano}}
+      </p>
+
+    </div>
+
+  {{/if}}
+
+  <hr>
+
+  <div class="text-center">
+
+    <p>
+      <strong>Duração:</strong>
+      {{ficha.duracaoMinutos}} minutos
+    </p>
+
+    <p>
+      <strong>Orçamento:</strong>
+      {{ficha.orcamento}}
+    </p>
+
+    <p>
+      <strong>Bilheteria:</strong>
+      {{ficha.bilheteria}}
+    </p>
+
+  </div>
+
+  <div class="text-center mt-4">
+
+    <a href="/fichatecnica" class="btn btn-ver">
+      Voltar para lista
+    </a>
+
+  </div>
+
+</div>

@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">Lista de Artistas</h1>
+
+  <div class="text-center mb-4">
+
+    <a href="/artistas/cadastrar" class="btn btn-cadastrar">
+      Cadastrar Artista
+    </a>
+
+  </div>
+
+  <hr>
+
+  {{#each artistas}}
+
+    <div class="text-center mb-4">
+
+      <h3>{{nome}}</h3>
+
+      <a href="/artistas/{{id}}" class="btn btn-ver">
+        Ver detalhes
+      </a>
+
+      <br>
+      <br>
+
+      <a
+        href="/artistas/{{id}}/editar"
+        class="btn btn-cadastrar"
+      >
+        <i class="fa-solid fa-pen-to-square"></i>
+        Editar
+      </a>
+
+      <form
+        action="/artistas/{{id}}?_method=DELETE"
+        class="btn btn-cadastrar"
+        method="POST"
+        style="display: inline;"
+      >
+
+        <button
+          type="submit"
+          class="btn btn-excluir"
+        >
+          <i class="fa-solid fa-trash-can"></i>
+          Excluir
+        </button>
+
+      </form>
+
+    </div>
+
+    <hr>
+
+  {{/each}}
+
+  <div class="text-center mt-4">
+
+    <a href="/" class="btn btn-ver">
+      Voltar para página inicial
+    </a>
+
+  </div>
+
+</div>
