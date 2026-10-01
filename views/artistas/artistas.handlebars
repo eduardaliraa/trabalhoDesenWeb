@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/artistas.css">
 
 <div class="container mt-4">
 
@@ -8,8 +9,8 @@
 
   <div class="text-center mb-4">
 
-    <a href="/artistas/cadastrar" class="btn btn-cadastrar">
-      Cadastrar Artista
+    <a href="/artistas/cadastrar" class="btn btn-primary">
+    Cadastrar Artista
     </a>
 
   </div>
@@ -37,22 +38,16 @@
         Editar
       </a>
 
-      <form
-        action="/artistas/{{id}}?_method=DELETE"
-        class="btn btn-cadastrar"
-        method="POST"
-        style="display: inline;"
-      >
-
-        <button
-          type="submit"
-          class="btn btn-excluir"
-        >
-          <i class="fa-solid fa-trash-can"></i>
-          Excluir
-        </button>
-
-      </form>
+      <form 
+  action="/artistas/{{id}}?_method=DELETE" 
+  method="POST" 
+  style="display: inline;"
+>
+  <button type="submit" class="btn btn-excluir">
+    <i class="fa-solid fa-trash-can"></i>
+    Excluir
+  </button>
+</form>
 
     </div>
 

@@ -1,0 +1,259 @@
+body {
+    background-color: #f1bfe0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #6f2463;
+    font-size: 60px;
+    margin-bottom: 45px;
+}
+
+h2 {
+    color: #7d2870;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #913b82;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #6b5267;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+strong {
+    color: #6f2463;
+}
+
+table {
+    width: 95%;
+    margin: 35px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    padding: 20px;
+    background-color: #6f2463;
+    color: white;
+    font-size: 21px;
+}
+
+td {
+    padding: 20px;
+    color: #6b5267;
+    font-size: 20px;
+    border-bottom: 1px solid #e8b5df;
+}
+
+tr:nth-child(even) {
+    background-color: #fff5fc;
+}
+
+tr:hover {
+    background-color: #fbe5f6;
+}
+
+.btn {
+    padding: 14px 26px;
+    margin: 8px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border-radius: 11px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn-ver {
+    background-color: #f061c5;
+    border-color: #f061c5;
+}
+
+.btn-ver:hover {
+    background-color: #d873ec;
+    border-color: #d873ec;
+}
+
+.btn-cadastrar {
+    display: inline-block;
+    width: auto;
+
+    background-color: #d873ec;
+    border: 2px solid #d873ec;
+
+    cursor: pointer;
+}
+
+.btn-cadastrar:hover {
+    background-color: #913b82;
+    border-color: #913b82;
+}
+
+form {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #6f2463;
+    font-size: 19px;
+}
+
+input,
+select,
+textarea,
+.form-control,
+.form-select 
+
+{
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 23px;
+
+    color: #6b5267;
+    background-color: white;
+
+    border: 2px solid #d873ec;
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus 
+{
+    border-color: #913b82;
+    box-shadow: 0 0 0 0.2rem rgba(145, 59, 130, 0.15);
+}
+
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.form-check-input {
+    width: 18px !important;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+
+    border: 2px solid #d873ec;
+}
+
+.form-check-input:checked {
+    background-color: #6f2463;
+    border-color: #6f2463;
+}
+
+.form-check-label {
+    margin: 0;
+    color: #6b5267;
+    font-size: 18px;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    min-height: 220px;
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(111, 36, 99, 0.10);
+}
+
+.hero {
+    min-height: 350px;
+    padding: 75px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 900px;
+    font-size: 24px;
+}
+
+nav {
+    padding: 22px 5%;
+}
+
+nav a {
+    padding: 14px 22px;
+    color: #6f2463;
+    font-size: 19px;
+}
+
+.ver-detalhes {
+    padding: 5px 10px;
+
+    background-color: #f061c5;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.ver-detalhes:hover {
+    background-color: #d873ec;
+    color: white;
+}
+
+hr {
+    width: 90%;
+    height: 2px;
+    margin: 35px auto;
+
+    border: 0;
+    background-color: #e8b5df;
+}
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.botoes .btn {
+    margin: 3px;
+}
